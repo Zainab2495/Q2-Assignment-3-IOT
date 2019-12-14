@@ -1,0 +1,17 @@
+
+#![allow(unused)]
+ fn main() {
+fn consume_with_relish<F:FnOnce()->String>(func: F)
+{
+
+     println!("Consumed: {}", func());
+
+     println!("Delicious!");
+
+
+}
+
+let x = String::from("x");
+let consume_and_return_x = || x;
+ consume_with_relish(consume_and_return_x);
+ }
