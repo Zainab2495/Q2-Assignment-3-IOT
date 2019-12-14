@@ -1,0 +1,14 @@
+ #![allow(unused)]
+ fn main() {
+ fn do_twice<F:FnMut()>(mut func: F)
+ {
+     func();
+     func();
+ }
+ let mut x: usize = 1;
+ {
+let add_two_to_x = || x += 2;   
+do_twice(add_two_to_x);
+}
+ println!("{}",x);
+ }
